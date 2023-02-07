@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import Header  from "./components/Header";
 import Cart from "./components/Cart";
 import { Toaster } from "react-hot-toast";
+import Contact from "./components/Contact";
+import HomeA from "./components/HomeA";
 function App() {
   return (
     
@@ -11,8 +13,9 @@ function App() {
     <Header/>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/home" element={<HomeA/>}/>
       <Route path="/cart" element={<Cart/>}/>
-     
+     <Route path="/cnt" element={<Contact/>} />
     </Routes>
     <Toaster/>
     </BrowserRouter>

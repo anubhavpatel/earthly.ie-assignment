@@ -1,5 +1,5 @@
 @import "color";
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
 .cart {
   height: 100vh;
   display: grid;
@@ -12,8 +12,9 @@
         display: none;
       }
     > h1 {
-      color: $tertiary;
+      color: black;
       font: 100 2rem "Roboto";
+      
     }
   }
 
@@ -22,7 +23,7 @@
     background-color: $primary;
     color: $tertiary;
     
-    box-shadow: -10px 0px 10px rgba(255, 255, 255, 0.182);
+ 
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -58,26 +59,54 @@
 }
 
 .cartItem {
-  background-color: $tertiary;
+  background-color: rgb(240, 239, 239);
   width: 100%;
   border-radius: 10px;
   margin: 2rem 0;
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 1fr;
-  align-items: center;
-   
-  img {
+  display: flex;
+    justify-content: space-between;
+  
+   align-items: center;
+  
+   > .asd{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    > article{
+      margin-left: 1rem;
+    
+      >h3{
+        font-family: 'Source Sans Pro', sans-serif
+      }
+     }
+    > .plus-minus{
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+     padding: 0rem 2rem;
+     >.delete{
+      margin-left: 4rem;
+      font-size: 2rem;
+     }
+    }
+   }
+  img {
+    width: 200px;
     object-fit: contain;
+    border-radius: 1rem;
   }
   > div {
     display: flex;
     align-items: center;
     height: 100%;
     button {
-      width: 30px;
-      height: 30px;
+      width: 2rem;
+      height: 2rem;
       border: none;
       background-color: $primary;
       color: $tertiary;
@@ -93,6 +122,7 @@
       height: 30px;
       display: grid;
       place-items: center;
+      
     }
   }
 
@@ -123,8 +153,36 @@
       }
     }
     .cartItem{
+      > .asd{
+       
+        flex-direction: column;
+       
+     
+        > div{
+          >button{
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+        > article{
+          margin-left: 0rem;
+          
+          >h3{
+            font-size: .8rem;
+          
+          }
+        
+         }
+         > .plus-minus{
+          > .delete{
+            font-size: 1.3rem;
+          }
+         }
+      }
+    
         img {
-            height: 140px;
+          border-radius: .3rem;
+           width: 70px;
             object-fit: contain;
           }
     }

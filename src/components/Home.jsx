@@ -1,7 +1,8 @@
-import React from 'react'
+import {React,useState}from 'react'
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import "../style/Home.scss"
+import Modal from './Modal';
 const img1 =
   "https://static.wixstatic.com/media/ead566_be12cf35ae454264874d19841803bf17~mv2.jpg/v1/fill/w_306,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ead566_be12cf35ae454264874d19841803bf17~mv2.jpg";
 const img2 =
@@ -12,42 +13,46 @@ const img5= "https://static.wixstatic.com/media/ead566_accfe36a331741fb81daacaa4
 const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085f51907~mv2.jpg/v1/fill/w_306,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ead566_f00cb71f38d7415eacd2c60085f51907~mv2.jpg";
 
   const Home = () => {
+   
+   
+   
+    
     const productList = [
         {
           name: "Plant Based Reusable Cups",
-          price: 2.39,
+          price: 2,
           imgSrc: img1,
           id: "asd1",
         },
         {
           name: "Sustainability Starter Kit",
-          price: 10.99,
+          price: 10,
           imgSrc: img2,
           id: "asd2",
         },
         {
           name: "Natural Bamboo Loofah",
-          price: 2.99,
+          price: 3,
           imgSrc: img3,
           id: "asd3",
         },
         
         {
           name: "Bamboo Toothbrush",
-          price: 3.59,
+          price: 4,
           imgSrc: img4,
           id: "asd4",
         },
         {
           name: "Plant Based Reusable Container",
-          price: 2.99,
+          price: 3,
           imgSrc: img5,
           id: "asd5",
         },
         
         {
           name: "Reusable Bamboo straws",
-          price: 1.99,
+          price: 2,
           imgSrc: img6,
           id: "asd6",
         },
@@ -65,9 +70,13 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
         toast.success("Added To Cart");
       };
     return (
+      <>
         <div className="home">
+         
           {productList.map((i) => (
+              <>
             <ProductCard
+          
               key={i.id}
               imgSrc={i.imgSrc}
               name={i.name}
@@ -75,20 +84,30 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
               id={i.id}
               handler={addToCartHandler}
             />
+            
+          </>
           ))}
+        
         </div>
+      
+        </>
       );
     };
     
-    const ProductCard = ({ name, id, price, handler, imgSrc }) => (
-      <div className="productCard">
-        <img src={imgSrc} alt={name} />
+    const ProductCard = ({ name, id, price, handler, imgSrc}) => (
+    
+     <div className="productCard">
+      
+        <img src={imgSrc} alt={name}  />
+       
         <p>{name}</p>
         <h4>${price}</h4>
         <button onClick={() => handler({ name, price, id, quantity: 1, imgSrc })}>
           Add to Cart
         </button>
       </div>
+     
+
     );
 
 export default Home

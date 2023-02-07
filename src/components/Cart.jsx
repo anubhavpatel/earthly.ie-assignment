@@ -68,19 +68,25 @@ const Cart = () => {
 }
 const CartItem = ({ imgSrc, name, price, qty,id, decrement,increment, deleteHandler}) => (
   <div className="cartItem">
+   
     <img src={imgSrc} alt="Item" />
+    
+   <div className="asd">
     <article>
       <h3>{name}</h3>
       <p>${price}</p>
     </article>
 
-    <div>
+    <div className='plus-minus'>
       <button onClick={() => decrement(id)}>-</button>
       <p>{qty}</p>
       <button onClick={() => increment(id)}>+</button>
+    
+     
+    
+    <AiFillDelete className='delete' onClick={() => deleteHandler(id)} />
     </div>
-
-    <AiFillDelete onClick={() => deleteHandler(id)} />
+    </div>
   </div>
 );
 export default Cart
