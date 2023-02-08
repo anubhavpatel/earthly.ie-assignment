@@ -69,6 +69,14 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
         })
         toast.success("Added To Cart");
       };
+
+      const [popupContent,setPopupContent]=useState([]);
+      const [showModal, setShowModal]=useState(false);
+     
+      const modalView=(i)=>{
+        setPopupContent([i]);
+         setShowModal(true);
+      }
     return (
       <>
         <div className="home">
@@ -76,7 +84,8 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
           {productList.map((i) => (
               <>
             <ProductCard
-          
+          modalView={modalView}
+          i={i}
               key={i.id}
               imgSrc={i.imgSrc}
               name={i.name}
@@ -89,16 +98,36 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
           ))}
         
         </div>
-      
+           {showModal &&
+            <div className="pop_up">
+           <div className="pop_up_content">
+            <div className="btn">
+             <button onClick={()=>setShowModal(false)}>cancel</button>
+             </div>
+            <div className="content">
+             {popupContent.map((pop)=>{
+               return (
+                <>
+                <img src={pop.imgSrc} alt={pop.imgSrc}/>
+                  <p>Name:{" "}{pop.name}</p>
+                  <p>Price:{" "}${pop.price}</p>
+                  </>
+               
+               )
+             })}
+             </div>
+             </div>
+         </div>   
+         }
         </>
       );
     };
     
-    const ProductCard = ({ name, id, price, handler, imgSrc}) => (
+    const ProductCard = ({ name, id, price, handler, imgSrc,modalView,i}) => (
     
      <div className="productCard">
       
-        <img src={imgSrc} alt={name}  />
+        <img src={imgSrc} alt={name} onClick={()=>modalView(i)} />
        
         <p>{name}</p>
         <h4>${price}</h4>
