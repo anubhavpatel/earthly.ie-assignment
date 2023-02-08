@@ -56,19 +56,37 @@
   align-items: center;
   flex-direction: column;
   transition: all 0.5s;
+   >.detailes{
+    display: flex;
+    padding: 0 3rem;
+   width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    >p{
+      cursor: pointer;
+      font-family: 'Source Sans Pro', sans-serif;
+     
+        &:hover{
+          color: $secondary;
+            
+      }
+    }
+   }
     img{
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 30px;
       cursor: pointer;
+     
     }
     h4{
       margin: 1rem;
     }
     >p{
       margin-top: 1rem;
-      font-family: 'Source Sans Pro', sans-serif
+      font-family: 'Source Sans Pro', sans-serif;
+    
     }
     button{
       cursor: pointer;

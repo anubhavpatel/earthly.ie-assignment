@@ -92,6 +92,9 @@
      >.delete{
       margin-left: 4rem;
       font-size: 2rem;
+      &:hover{
+        color: $secondary;
+      }
      }
     }
    }

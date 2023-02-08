@@ -130,7 +130,10 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
         <img src={imgSrc} alt={name} onClick={()=>modalView(i)} />
        
         <p>{name}</p>
+        <div className="detailes">
         <h4>${price}</h4>
+        <p onClick={()=>modalView(i)}>Detailes</p>
+        </div>
         <button onClick={() => handler({ name, price, id, quantity: 1, imgSrc })}>
           Add to Cart
         </button>
