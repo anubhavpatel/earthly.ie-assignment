@@ -1,8 +1,10 @@
 import {React,useState}from 'react'
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
+import {GrClose} from "react-icons/gr"
+import {BsChatText} from "react-icons/bs"
 import "../style/Home.scss"
-import Modal from './Modal';
+
 const img1 =
   "https://static.wixstatic.com/media/ead566_be12cf35ae454264874d19841803bf17~mv2.jpg/v1/fill/w_306,h_306,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/ead566_be12cf35ae454264874d19841803bf17~mv2.jpg";
 const img2 =
@@ -15,8 +17,7 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
   const Home = () => {
    
    
-   
-    
+
     const productList = [
         {
           name: "Plant Based Reusable Cups",
@@ -77,6 +78,7 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
         setPopupContent([i]);
          setShowModal(true);
       }
+
     return (
       <>
         <div className="home">
@@ -96,13 +98,13 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
             
           </>
           ))}
-        
+       
         </div>
            {showModal &&
             <div className="pop_up">
            <div className="pop_up_content">
             <div className="btn">
-             <button onClick={()=>setShowModal(false)}>cancel</button>
+             <GrClose  onClick={()=>setShowModal(false)}/>
              </div>
             <div className="content">
              {popupContent.map((pop)=>{
@@ -119,6 +121,8 @@ const img6="https://static.wixstatic.com/media/ead566_f00cb71f38d7415eacd2c60085
              </div>
          </div>   
          }
+          
+          <button className='chat' ><BsChatText className='icon'/>Let's Chat</button>
         </>
       );
     };

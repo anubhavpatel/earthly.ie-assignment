@@ -1,5 +1,5 @@
 import React from 'react'
-import { toast } from 'react-hot-toast';
+
 import {AiFillDelete} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux';
 import "../style/cart.scss"
@@ -31,9 +31,7 @@ const Cart = () => {
       type: "calculatePrice"
     })
   }
-  const order =()=>{
-    toast.success("Order successfully");
-  }
+ 
   return (
     <div className='cart'>
    <main>
@@ -61,7 +59,7 @@ const Cart = () => {
         <h2>Shipping: ${shipping}</h2>
         <h2>Tax: ${tax}</h2>
         <h2>Total: ${total}</h2>
-        <button onClick={order}>Order Now</button>
+        <button   title="We can't accept online orders right now ">Order Now</button>
    </aside>
     </div>
   )

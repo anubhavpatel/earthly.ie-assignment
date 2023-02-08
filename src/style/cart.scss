@@ -38,7 +38,8 @@
       }
     }
     > button{
-      cursor: pointer;
+     
+      cursor: not-allowed;
       background-color: $secondary;
       padding: 1rem;
       border: none;
