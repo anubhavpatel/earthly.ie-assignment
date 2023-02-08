@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/earthly.ie-assignment/static/css/main.39929e77.css",
-    "main.js": "/earthly.ie-assignment/static/js/main.bb40d15e.js",
+    "main.css": "/earthly.ie-assignment/static/css/main.e4953016.css",
+    "main.js": "/earthly.ie-assignment/static/js/main.28cbea03.js",
     "index.html": "/earthly.ie-assignment/index.html",
-    "main.39929e77.css.map": "/earthly.ie-assignment/static/css/main.39929e77.css.map",
-    "main.bb40d15e.js.map": "/earthly.ie-assignment/static/js/main.bb40d15e.js.map"
+    "main.e4953016.css.map": "/earthly.ie-assignment/static/css/main.e4953016.css.map",
+    "main.28cbea03.js.map": "/earthly.ie-assignment/static/js/main.28cbea03.js.map"
   },
   "entrypoints": [
-    "static/css/main.39929e77.css",
-    "static/js/main.bb40d15e.js"
+    "static/css/main.e4953016.css",
+    "static/js/main.28cbea03.js"
   ]
 }
